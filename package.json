@@ -1,0 +1,24 @@
+{
+  "name": "native",
+  "version": "1.0.0",
+  "description": "webporxy",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/entrpix/native.git"
+  },
+  "author": "Scaratek",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/entrpix/native/issues"
+  },
+  "homepage": "https://github.com/entrpix/native#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  }
+}
