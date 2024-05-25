@@ -4,17 +4,17 @@ function rewrite(element) {
     
     if (href) {
         if (!href.startsWith('http')) {
-            element.setAttribute('href', `${window.location.href}${href}`);
+            element.setAttribute('href', `${window.location.href}${encodeURIComponent(href)}`);
         } else {
-            element.setAttribute('href', `${window.location.origin}/url/${href}`); // Fix URLs
+            element.setAttribute('href', `${window.location.origin}/url/${encodeURIComponent(href)}`);
         }
     }
     
     if (src) {
         if (!src.startsWith('http')) {
-            element.setAttribute('src', `${window.location.href}${src}`);
+            element.setAttribute('src', `${window.location.href}${encodeURIComponent(src)}`);
         } else {
-            element.setAttribute('src', `${window.location.origin}/url/${src}`); // Fix URLs
+            element.setAttribute('src', `${window.location.origin}/url/${encodeURIComponent(src)}`);
         }
     }
 
@@ -34,4 +34,4 @@ const observer = new MutationObserver((mutations) => {
             }
         });
     });
-}); // who up observering your mutations
+});

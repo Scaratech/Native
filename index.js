@@ -8,8 +8,8 @@ const app = express();
 app.use(express.static(publicPath));
 
 app.get('/url/*', async (req, res) => {
-  const URL = req.params[0];
-
+  const URL = decodeURIComponent(req.params[0]);
+  
   try {
     const response = await fetch(URL);
     const contentType = response.headers.get('content-type');
