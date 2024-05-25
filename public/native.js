@@ -1,6 +1,10 @@
 function rewrite(element) {
     const href = element.getAttribute('href');
     const src = element.getAttribute('src');
+
+    if (src && src.includes('native.js')) {
+        return; // lmao
+    }
     
     if (href) {
         if (!href.startsWith('http')) {
