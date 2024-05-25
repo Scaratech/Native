@@ -12,3 +12,7 @@ $ cd native
 $ npm i 
 $ npm start
 ```
+
+## How to Use
+- Add `/url/*URL*` to the end of the URL
+  - Replace `*URL*` with the URL of the page you want to visit
