@@ -1,43 +1,25 @@
-function rewrite(element) {
-    const href = element.getAttribute('href');
-    const src = element.getAttribute('src');
+function rewrite(element, proxyUrl) {
+    const attributes = ['href', 'src']; // Rewrite these attr's
 
-    if (src && src.includes('native.js')) {
-        return; // lmao
-    }
-    
-    if (href) {
-        if (!href.startsWith('http')) {
-            element.setAttribute('href', `${window.location.href}${encodeURIComponent(href)}`);
-        } else {
-            element.setAttribute('href', `${window.location.origin}/url/${encodeURIComponent(href)}`);
+    attributes.forEach(attr => {
+        const attrValue = element.getAttribute(attr);
+
+        if (attrValue && !attrValue.includes('native.js')) { // Don't rewrite the rewritier
+            const url = new URL(attrValue, proxyUrl);
+            element.setAttribute(attr, `${window.location.origin}/url/${url}`);
         }
-    }
-    
-    if (src) {
-        if (!src.startsWith('http')) {
-            element.setAttribute('src', `${window.location.href}${encodeURIComponent(src)}`);
-        } else {
-            element.setAttribute('src', `${window.location.origin}/url/${encodeURIComponent(src)}`);
-        }
-    }
+    });
 
     if (element.hasAttribute('integrity')) {
-        element.removeAttribute('integrity'); // wtf is this
+        element.removeAttribute('integrity'); // kys
     }
 }
 
+function getUrl() {
+    return window.location.pathname.split('/url/').pop(); // Grab URL
+};
+
+const proxyUrl = getUrl();
+
 const elements = document.querySelectorAll('[href], [src]');
-elements.forEach(rewrite);
-
-const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-            if (node.nodeType === 1) {
-                rewrite(node);
-            }
-        });
-    });
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
+elements.forEach(element => rewrite(element, proxyUrl));
