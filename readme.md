@@ -22,10 +22,5 @@ $ npm start
 - [X] Correct MIME types for text and images
 - [X] Inject Rewriter
 - [X] Attribute Rewriter
-- [ ] Loading Page
-- [ ] URL Encoder
-- [ ] JS Injection
-- [ ] Google App Scripts port
-- [ ] Full Client-Side port?
-- [ ] Site Blocklist
-- [ ] Update blog post
+- [X] Site Blocklist
+- [X] JS Injection
