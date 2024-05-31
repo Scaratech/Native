@@ -16,3 +16,16 @@ $ npm start
 ## How to Use
 - Add `/url/*URL*` to the end of the URL
   - Replace `*URL*` with the URL of the page you want to visit
+
+## TODO
+- [X] Fetching API
+- [X] Correct MIME types for text and images
+- [X] Inject Rewriter
+- [X] Attribute Rewriter
+- [ ] Loading Page
+- [ ] URL Encoder
+- [ ] JS Injection
+- [ ] Google App Scripts port
+- [ ] Full Client-Side port?
+- [ ] Site Blocklist
+- [ ] Update blog post
