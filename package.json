@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/entrpix/native#readme",
   "dependencies": {
-    "express": "^4.19.2",
-    "node-fetch": "^3.3.2"
+    "express": "^4.19.2"
   }
 }
