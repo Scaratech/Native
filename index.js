@@ -36,7 +36,7 @@ app.get('/url/*', async (req, res) => {
 
     try {
         const response = await fetch(URL);
-        await handleResponse(response, res);
+        await handleResponse(response, res);    
 
     } catch (error) {
         console.error(error);
