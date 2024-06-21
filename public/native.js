@@ -1,16 +1,14 @@
 function rewrite(element, proxyUrl) {
     const cssImportRegex = /(?<=url\("?'?)[^"'][\S]*[^"'](?="?'?\);?)/g;
     const jsImportRegex = /(?<=import\s*['"])[^'"]+(?=['"])/g;
-    
-    const rewrittenUrl = `${location.origin}/url/${url}`;
-
+        
     const attributes = ['href', 'src'];
 
     attributes.forEach(attr => {
         const attrValue = element.getAttribute(attr);
         if (attrValue && !attrValue.includes('native.js')) {
             const url = new URL(attrValue, proxyUrl);
-            element.setAttribute(attr, rewrittenURL);
+            element.setAttribute(attr, `${location.origin}/url/${url}`);
         }
     });
 
@@ -19,7 +17,7 @@ function rewrite(element, proxyUrl) {
     if (element.hasAttribute('style')) {
         const newStyleValue = element.getAttribute('style').replace(cssImportRegex, match => {
             const url = new URL(match, proxyUrl);
-            return rewrittenURL;
+            return `${location.origin}/url/${url}`;
         });
         element.setAttribute('style', newStyleValue);
     }
@@ -30,7 +28,7 @@ function rewrite(element, proxyUrl) {
             .then(script => {
                 const newScript = script.replace(jsImportRegex, match => {
                     const url = new URL(match, proxyUrl);
-                    return rewrittenURL;
+                    return `${location.origin}/url/${url}`;
                 });
                 element.src = URL.createObjectURL(new Blob([newScript], { type: 'application/javascript' }));
             });
@@ -40,7 +38,7 @@ function rewrite(element, proxyUrl) {
 function rewriteCssImport(styleContent, proxyUrl) {
     return styleContent.replace(/(?<=url\("?'?)[^"'][\S]*[^"'](?="?'?\);?)/g, match => {
         const url = new URL(match, proxyUrl);
-        return rewrittenURL;
+        return `${location.origin}/url/${url}`;
     });
 }   
 
