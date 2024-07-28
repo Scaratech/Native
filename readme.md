@@ -1,9 +1,7 @@
 # Native
-Webporxy
+Webporxy\
+**THIS WAS MADE FOR FUN IT DOES NOT ACTUALLY WORK WITH 99% OF SITES**
 
-## DO NOT USE
-- This only does HTML and CSS rewriting
-- 99% of sites won't work (static sites should work fine)
 
 ## Deployment
 ```sh
@@ -12,7 +10,3 @@ $ cd native
 $ npm i 
 $ npm start
 ```
-
-## How to Use
-- Add `/url/*URL*` to the end of the URL
-  - Replace `*URL*` with the URL of the page you want to visit
