@@ -29,3 +29,4 @@ Limiations:
 - [ ] How the fuck am I suppose to do JS rewriting
 - [ ] I don't know why I'm using `srcdoc` I can *probably* just append it to the `DOM` but fuck you
 - [ ] No scope (`/uv/`, `/url/`, etc.)
+- [ ] Some `CSP` attributes cannot be removed (Ex. `nonce`)
