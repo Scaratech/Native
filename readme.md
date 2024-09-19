@@ -32,3 +32,4 @@ $ npm start
 - [ ] I don't know why I'm using `srcdoc` I can *probably* just append it to the `DOM` but fuck you
 - [ ] No scope (`/uv/`, `/url/`, etc.)
 - [ ] Some `CSP` attributes cannot be removed (Ex. `nonce`)
+- [ ] Since I plan to run this from the context of `HTML` files (and *maybe* `data:` URLs) some client APIs just cannot be patched.
