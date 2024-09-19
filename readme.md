@@ -25,7 +25,7 @@ $ npm start
 - [ ] Add `esbuild`
 - [ ] Make blog post 🤑
 
-### Limiations:
+### Limitations:
 - [ ] Cannot use `blobs` (I *think*)
 - [ ] How the fuck am I suppose to do JS rewriting
 - [ ] How do I do `codecs`
