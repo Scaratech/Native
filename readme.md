@@ -16,6 +16,7 @@ $ npm start
 - [ ] `Libcurl.js` for fetching
 - [ ] Rewrite attributes using `document` API (Replace `/example/` with `URL/example/`)
 - [ ] Display proxied page in a `srcdoc` iframe
+- [ ] Use `ContextualFragments` to use `document` APIs
 - [ ] For page navigation add a click `eventListener` to `<a>` tags to rewrite the response and update the `srcdoc`
 - [ ] Rewrite CSS by fetching it and replacing it from `<link rel="stylesheet" href="/styles.css">` to `<style>Rewritten CSS</style>`
 - [ ] TODO: How the hell am I gonna do JS rewriting
