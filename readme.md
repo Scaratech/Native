@@ -20,5 +20,6 @@ $ npm start
 - [ ] Rewrite CSS by fetching it and replacing it from `<link rel="stylesheet" href="/styles.css">` to `<style>Rewritten CSS</style>`
 - [ ] TODO: How the hell am I gonna do JS rewriting
 - [ ] TODO: Figure out `codecs`
-- [ ] I could probably just inject proxied client APIs into the `srcdoc`
+- [ ] I could probably just inject patched client APIs into the `srcdoc`
+- [ ] Add `esbuild`
 - [ ] Make blog post 🤑
