@@ -24,7 +24,7 @@ $ npm start
 - [ ] Add `esbuild`
 - [ ] Make blog post 🤑
 
-Limiations:
+### Limiations:
 - [ ] Cannot use `blobs` (I *think*)
 - [ ] How the fuck am I suppose to do JS rewriting
 - [ ] I don't know why I'm using `srcdoc` I can *probably* just append it to the `DOM` but fuck you
